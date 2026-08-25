@@ -249,3 +249,26 @@ h2 {
   .hero { padding: 3.5rem 1.25rem 4rem; }
   main { padding: 2.5rem 1.25rem; }
 }
+/* ---------- CARTA DE FRANCO ARMANI ---------- */
+
+.card:last-child {
+  border: 2px solid var(--gold);
+  box-shadow: 0 4px 12px rgba(15, 61, 46, 0.18);
+}
+
+.card:last-child .card-media {
+  background: var(--pitch-dark);
+}
+
+.card:last-child .card-kicker {
+  color: var(--gold-dark);
+}
+
+.card:last-child .card-body h3 {
+  color: var(--pitch-dark);
+}
+
+.card:last-child:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(15, 61, 46, 0.2);
+}
