@@ -7,11 +7,16 @@
   --gold-dark: #c1801e;
   --card-bg: #ffffff;
   --muted: #5c6b64;
+
   --font-display: 'Oswald', sans-serif;
   --font-body: 'Inter', sans-serif;
 }
 
-* { box-sizing: border-box; }
+
+* {
+  box-sizing: border-box;
+}
+
 
 body {
   margin: 0;
@@ -21,20 +26,28 @@ body {
   line-height: 1.5;
 }
 
+
 /* ---------- HERO ---------- */
 
 .hero {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(180deg, var(--pitch-dark), var(--pitch-mid));
+  background: linear-gradient(
+    180deg,
+    var(--pitch-dark),
+    var(--pitch-mid)
+  );
+
   padding: 5rem 1.5rem 6rem;
   text-align: center;
   color: var(--chalk);
 }
 
+
 .hero-pitch {
   position: absolute;
   inset: 0;
+
   background-image: repeating-linear-gradient(
     90deg,
     rgba(255, 255, 255, 0.045) 0,
@@ -42,20 +55,27 @@ body {
     transparent 60px,
     transparent 120px
   );
+
   pointer-events: none;
 }
 
+
 .hero-pitch::after {
   content: "";
+
   position: absolute;
   top: 50%;
   left: 50%;
+
   width: 160px;
   height: 160px;
+
   border: 2px solid rgba(244, 247, 242, 0.18);
   border-radius: 50%;
+
   transform: translate(-50%, -50%);
 }
+
 
 .hero-content {
   position: relative;
@@ -63,212 +83,318 @@ body {
   margin: 0 auto;
 }
 
+
 .eyebrow {
   display: inline-block;
+
   font-family: var(--font-display);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   font-size: 0.8rem;
+
   color: var(--gold);
+
   margin-bottom: 1rem;
 }
+
 
 .hero h1 {
   font-family: var(--font-display);
   font-weight: 700;
+
   font-size: clamp(2.4rem, 6vw, 4rem);
+
   margin: 0 0 0.75rem;
+
   letter-spacing: 0.01em;
 }
+
 
 .subtitle {
   font-size: 1.05rem;
   color: rgba(244, 247, 242, 0.8);
+
   margin: 0;
 }
+
 
 /* ---------- SECTIONS ---------- */
 
 main {
   max-width: 960px;
   margin: 0 auto;
+
   padding: 3.5rem 1.5rem;
 }
+
 
 section + section {
   margin-top: 4rem;
 }
 
+
 h2 {
   font-family: var(--font-display);
   font-size: 1.9rem;
   font-weight: 600;
+
   margin: 0 0 0.35rem;
+
   display: flex;
   align-items: baseline;
+
   gap: 0.6rem;
 }
 
+
 .tag {
   font-size: 0.7rem;
+
   letter-spacing: 0.12em;
   text-transform: uppercase;
+
   background: var(--gold);
   color: var(--ink);
+
   padding: 0.25rem 0.55rem;
+
   border-radius: 3px;
+
   font-family: var(--font-body);
   font-weight: 600;
 }
 
+
 .section-hint {
   color: var(--muted);
+
   margin: 0 0 1.75rem;
+
   font-size: 0.95rem;
 }
 
-/* ---------- ROSTER (participant list) ---------- */
+
+/* ---------- ROSTER ---------- */
 
 .roster-list {
   list-style: none;
+
   margin: 0;
   padding: 0;
+
   display: flex;
   flex-direction: column;
+
   gap: 0.6rem;
 }
+
 
 .roster-list li {
   display: flex;
   align-items: center;
+
   gap: 0.9rem;
+
   background: var(--card-bg);
+
   border: 1px solid rgba(15, 61, 46, 0.1);
+
   border-left: 4px solid var(--pitch-dark);
+
   border-radius: 6px;
+
   padding: 0.85rem 1.1rem;
+
   font-weight: 500;
 }
+
 
 .number {
   font-family: var(--font-display);
   font-weight: 700;
+
   color: var(--pitch-dark);
+
   min-width: 1.6rem;
 }
 
+
 .badge {
   margin-left: auto;
+
   font-size: 0.7rem;
+
   text-transform: uppercase;
   letter-spacing: 0.08em;
+
   color: var(--gold-dark);
+
   border: 1px solid var(--gold);
+
   border-radius: 999px;
+
   padding: 0.15rem 0.6rem;
 }
 
-/* ---------- GALLERY / CARDS ---------- */
+
+/* ---------- GALERÍA / CARDS ---------- */
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+
+  grid-template-columns:
+    repeat(auto-fill, minmax(220px, 1fr));
+
   gap: 1.25rem;
 }
 
+
 .card {
   background: var(--card-bg);
+
   border-radius: 10px;
+
   overflow: hidden;
+
   border: 1px solid rgba(15, 61, 46, 0.1);
-  box-shadow: 0 1px 2px rgba(11, 31, 23, 0.04);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+  box-shadow:
+    0 1px 2px rgba(11, 31, 23, 0.04);
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
 }
+
 
 .card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(11, 31, 23, 0.12);
+
+  box-shadow:
+    0 10px 24px rgba(11, 31, 23, 0.12);
 }
+
 
 .card-media {
   background: var(--pitch-mid);
+
   aspect-ratio: 4 / 3;
+
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+
 .card-media img {
   width: 60%;
   height: 60%;
+
   object-fit: contain;
 }
+
 
 .card-body {
   padding: 1rem 1.1rem 1.25rem;
 }
 
+
 .card-kicker {
   font-family: var(--font-display);
+
   color: var(--gold-dark);
+
   font-size: 0.8rem;
+
   font-weight: 600;
 }
 
+
 .card-body h3 {
   font-family: var(--font-display);
+
   font-size: 1.15rem;
+
   margin: 0.2rem 0 0.4rem;
 }
 
+
 .card-body p {
   margin: 0;
+
   color: var(--muted);
+
   font-size: 0.92rem;
 }
 
+
 .card-body code {
   background: rgba(15, 61, 46, 0.08);
+
   padding: 0.1rem 0.3rem;
+
   border-radius: 3px;
+
   font-size: 0.85em;
 }
 
-/* ---------- FOOTER ---------- */
 
-.site-footer {
-  text-align: center;
-  padding: 2rem 1.5rem 3rem;
-  color: var(--muted);
-  font-size: 0.85rem;
-}
-
-/* ---------- RESPONSIVE ---------- */
-
-@media (max-width: 480px) {
-  .hero { padding: 3.5rem 1.25rem 4rem; }
-  main { padding: 2.5rem 1.25rem; }
-}
 /* ---------- CARTA DE FRANCO ARMANI ---------- */
 
 .card:last-child {
   border: 2px solid var(--gold);
-  box-shadow: 0 4px 12px rgba(15, 61, 46, 0.18);
+
+  box-shadow:
+    0 4px 12px rgba(15, 61, 46, 0.18);
 }
+
 
 .card:last-child .card-media {
   background: var(--pitch-dark);
 }
 
+
 .card:last-child .card-kicker {
   color: var(--gold-dark);
 }
+
 
 .card:last-child .card-body h3 {
   color: var(--pitch-dark);
 }
 
+
 .card:last-child:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 28px rgba(15, 61, 46, 0.2);
+
+  box-shadow:
+    0 12px 28px rgba(15, 61, 46, 0.2);
+}
+
+
+/* ---------- FOOTER ---------- */
+
+.site-footer {
+  text-align: center;
+
+  padding: 2rem 1.5rem 3rem;
+
+  color: var(--muted);
+
+  font-size: 0.85rem;
+}
+
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 480px) {
+
+  .hero {
+    padding: 3.5rem 1.25rem 4rem;
+  }
+
+  main {
+    padding: 2.5rem 1.25rem;
+  }
+
 }
